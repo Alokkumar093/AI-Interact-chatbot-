@@ -1,0 +1,279 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background: rgb(3,0,31);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.App {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.sideBar {
+    flex: 3;
+    border-right: 1px solid rgb(100,100,100);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 35rem;
+    background: rgb(20, 20, 50);
+}
+
+.main {
+    flex: 9;
+    overflow-y: auto;
+    min-height: calc(100vh - 14rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 6rem 10rem;
+    margin-bottom: 0;
+    margin-left: 30rem;
+}
+
+@media (max-width: 768px) {
+    .App {
+        flex-direction: column;
+    }
+
+    .sideBar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid rgb(100,100,100);
+    }
+
+    .main {
+        margin: 0;
+        margin-top: 10rem;
+        margin-left: 0;
+    }
+}
+
+.logo {
+    margin-right: 1rem;
+    
+}
+
+.brand {
+    font-size: 2rem;
+}
+
+.upperSide {
+    padding: 2.5rem;
+    border-bottom: 1px solid rgb(100,100,100);
+    height: 70%;
+}
+
+.upperSideTop {
+    padding-left: 2rem;
+    display: flex;
+    align-items: center;
+    margin: 2.5rem;
+}
+
+.addBtn {
+    height: 2rem;
+    padding-right: 1rem;
+}
+
+.midBtn {
+    background: #5A4BFF;
+    border: none;
+    color: white;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    width: 25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    border-radius: 0.5rem;
+}
+
+.query {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    color: rgba(222,222,222,1);
+    padding: 1.5rem;
+    width: 25rem;
+    margin: 1rem auto;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(98,98,98,1);
+}
+
+.lowerSide {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.listItems {
+    margin: 0.75rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    width: 80%;
+    height: 40px; /* Ensure full width for alignment */
+    justify-content: center; /* Center the buttons */
+    margin-bottom: 10px;
+    margin-left: 10%;
+}
+
+.listItemsImage {
+    margin: 1rem;
+    padding-right: 1rem;
+}
+
+.listItems:nth-child(1) > .listItemsImage {
+    margin-right: 0.5rem;
+}
+
+.listItems:nth-child(3) > .listItemsImage {
+    margin-right: 0.75rem;
+}
+
+.chats {
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    width: 100%;
+    max-width: 68rem;
+    height: calc(100vh - 17rem);
+    padding: 1rem;
+}
+
+.chats::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chats::-webkit-scrollbar-thumb {
+    background: rgba(100, 100, 100, 0.5);
+    border-radius: 4px;
+}
+
+.chats::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.chat {
+    margin: 1rem;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: flex-start;
+    text-align: justify;
+    width: 100%;
+    max-width: 65rem;
+    border-radius: 0.5rem;
+}
+
+.chatImg {
+    object-fit: cover;
+    width: 3.5rem;
+    margin-right: 1rem;
+    border-radius: 0.5rem;
+}
+
+.bot {
+    background: rgba(28,30,58,1);
+    align-self: flex-start;
+    justify-content: flex-start;
+}
+
+.chat:not(.bot) {
+    background: rgba(20,20,50,1);
+    align-self: flex-end;
+    justify-content: flex-end;
+}
+
+.chatFooter {
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.inp {
+    padding: 0.5rem;
+    background: rgba(28,30,58,1);
+    display: flex;
+    align-items: center;
+    border-radius: 0.5rem;
+    width: 68rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;
+}
+
+.inp > input {
+    width: calc(100% - 3rem);
+    outline: none;
+    padding: 1.25rem;
+    color: white;
+}
+
+.inp > input, .send {
+    background: transparent;
+    border: none;
+}
+
+.chatFooter > p {
+    margin: 2rem 0;
+}
+
+.Prompt {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+    font-size: 1.4rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease-in-out;
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.prompt_Section {
+    max-height: 40vh;
+    overflow-y: auto;
+    padding: 1rem;
+}
+
+.prompt_Section::-webkit-scrollbar {
+    width: 8px;
+}
+
+.prompt_Section::-webkit-scrollbar-thumb {
+    background: rgba(100, 100, 100, 0.5);
+    border-radius: 4px;
+}
+
+.prompt_Section::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+}
